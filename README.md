@@ -203,8 +203,5 @@ Result:
 
 The entire pipeline can be executed sequentially:
 
-prepare_nottingham_sequences
-createDataset
-trainLSTMModel
-generateMelody
-evaluateModel
+prepare_nottingham_sequences -> createDataset -> trainLSTMModel ->generateMelody -> evaluateModel
+
