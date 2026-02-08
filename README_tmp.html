@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="generating-monophonic-melodies-with-an-end-to-end-lstm-pipeline-matlab">Generating Monophonic Melodies with an End-to-End LSTM Pipeline (MATLAB)</h1>
+<p>This project focuses on generating <strong>monophonic melodies</strong> using a complete <strong>end-to-end LSTM-based pipeline</strong> implemented in MATLAB.<br>
+Starting from raw MIDI files, the system learns melodic and rhythmic patterns and generates new musical sequences using next-event prediction.</p>
+<p>The goal of the project was not to build a “black-box” music generator, but to <strong>understand and model melody and rhythm together</strong> in a controlled and reproducible way.</p>
+<hr>
+<h2 id="project-overview">Project Overview</h2>
+<p>Music generation is formulated as a <strong>sequence modeling problem</strong>, where the model predicts the <em>next musical event</em> based on a window of previous events.</p>
+<p>The pipeline consists of four main stages:</p>
+<ol>
+<li><strong>Data Preparation</strong></li>
+<li><strong>Model Training</strong></li>
+<li><strong>Melody Generation</strong></li>
+<li><strong>Evaluation &amp; Analysis</strong></li>
+</ol>
+<p>All stages are implemented and executed within MATLAB.</p>
+<hr>
+<h2 id="dataset">Dataset</h2>
+<ul>
+<li><strong>Dataset:</strong> Nottingham Monophonic MIDI Dataset</li>
+<li><strong>Why monophonic?</strong>
+<ul>
+<li>Avoids harmonic/polyphonic complexity</li>
+<li>Allows the model to focus purely on <strong>melodic contour and rhythm</strong></li>
+</ul>
+</li>
+<li><strong>Input format:</strong> MIDI</li>
+</ul>
+<h3 id="preprocessing">Preprocessing</h3>
+<ul>
+<li>Each MIDI file is converted into:
+<ul>
+<li>A <strong>pitch sequence</strong></li>
+<li>A <strong>duration sequence</strong></li>
+</ul>
+</li>
+<li>Melodies with fewer than 16 events are discarded to ensure sufficient context for training.</li>
+</ul>
+<hr>
+<h2 id="unified-pitch%E2%80%93duration-representation">Unified Pitch–Duration Representation</h2>
+<p>A key design decision in this project was to <strong>model pitch and rhythm jointly</strong>.</p>
+<h3 id="problem">Problem</h3>
+<p>Models that predict only pitch fail to learn rhythmic structure.</p>
+<h3 id="solution">Solution</h3>
+<ul>
+<li>Pitch and quantized duration are combined into a <strong>single unified token</strong></li>
+<li>Each musical event is represented as:</li>
+</ul>
+<p>token = pitch_index + (duration_class - 1) × total_pitch_count</p>
+<p>This turns music generation into a <strong>single multi-class classification problem</strong>, rather than predicting multiple features separately.</p>
+<hr>
+<h2 id="duration-quantization">Duration Quantization</h2>
+<ul>
+<li>
+<p>Raw MIDI durations are continuous and highly skewed</p>
+</li>
+<li>
+<p>Durations are quantized into <strong>K = 32 discrete classes</strong></p>
+</li>
+<li>
+<p>Quantile-based binning is used</p>
+<p>This reveals a <strong>class imbalance problem</strong>:</p>
+</li>
+<li>
+<p>Short notes appear much more frequently than long notes</p>
+</li>
+<li>
+<p>This bias affects model predictions and diversity</p>
+</li>
+</ul>
+<hr>
+<h2 id="dataset-construction">Dataset Construction</h2>
+<ul>
+<li>Training samples are created using a <strong>sliding window</strong> approach:
+<ul>
+<li>Input (X): <code>W</code> previous tokens</li>
+<li>Target (Y): the next token</li>
+</ul>
+</li>
+</ul>
+<h3 id="two-evaluation-strategies">Two Evaluation Strategies</h3>
+<ol>
+<li>
+<p><strong>Random Window Split</strong></p>
+<ul>
+<li>Windows are randomly split</li>
+<li>Can cause data leakage</li>
+<li>Optimistic performance</li>
+</ul>
+</li>
+<li>
+<p><strong>Song-Level Split (80/10/10)</strong></p>
+<ul>
+<li>Entire songs are separated into train/val/test</li>
+<li>Much stricter and more realistic</li>
+<li>Used for final evaluation</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="model-architecture">Model Architecture</h2>
+<p>The model follows a standard <strong>language-model-style LSTM architecture</strong>:</p>
+<ul>
+<li>Sequence Input</li>
+<li>Embedding Layer</li>
+<li>LSTM Layer</li>
+<li>Fully Connected Layer</li>
+<li>Softmax</li>
+<li>Classification Output</li>
+</ul>
+<p>The implementation uses <strong>MATLAB Deep Learning Toolbox</strong>.</p>
+<hr>
+<h2 id="training-details">Training Details</h2>
+<ul>
+<li><strong>Optimizer:</strong> Adam</li>
+<li><strong>Learning Rate:</strong> 1e-3 (constant)</li>
+<li><strong>Batch Size:</strong> 128</li>
+<li><strong>Epochs:</strong> 20</li>
+<li><strong>Hardware:</strong> Single GPU</li>
+<li><strong>Training Time:</strong> ~39 minutes</li>
+</ul>
+<h3 id="performance">Performance</h3>
+<ul>
+<li>Validation accuracy (window-level split): <strong>~59%</strong></li>
+<li>Validation accuracy (song-level split): <strong>~38–39%</strong></li>
+</ul>
+<blockquote>
+<p>The lower song-level accuracy better reflects real-world generalization.</p>
+</blockquote>
+<hr>
+<h2 id="ablation-study-context-window-length">Ablation Study: Context Window Length</h2>
+<p>Different window sizes were tested: <code>W = 8, 16, 32, 64</code></p>
+<p><strong>Observation:</strong></p>
+<ul>
+<li>Accuracy remains in a narrow range</li>
+<li>Increasing context alone does not significantly improve performance</li>
+<li>Suggests limitations due to:
+<ul>
+<li>Model capacity</li>
+<li>Class imbalance</li>
+<li>Representation bottlenecks</li>
+</ul>
+</li>
+</ul>
+<p>Final choice: <strong>W = 25</strong></p>
+<hr>
+<h2 id="melody-generation">Melody Generation</h2>
+<ul>
+<li>Generation is performed <strong>autoregressively</strong></li>
+<li>The model:
+<ol>
+<li>Takes a seed sequence</li>
+<li>Predicts the next token</li>
+<li>Appends it and repeats</li>
+</ol>
+</li>
+<li>Generated tokens are decoded back into:
+<ul>
+<li>Pitch</li>
+<li>Duration</li>
+</ul>
+</li>
+<li>Output is exported as a <strong>MIDI file</strong></li>
+<li>Audio rendering is done using MATLAB’s Audio Toolbox</li>
+</ul>
+<hr>
+<h2 id="evaluation">Evaluation</h2>
+<h3 id="qualitative">Qualitative</h3>
+<ul>
+<li>Generated melodies show:
+<ul>
+<li>Plausible pitch transitions</li>
+<li>Coherent rhythmic groupings</li>
+</ul>
+</li>
+<li>However:
+<ul>
+<li>Lack long-term musical structure</li>
+<li>Tend to repeat local patterns</li>
+</ul>
+</li>
+</ul>
+<h3 id="quantitative">Quantitative</h3>
+<ul>
+<li>Pitch distributions of generated melodies are compared with training data</li>
+<li>The model learns the correct pitch range</li>
+<li><strong>Mode collapse</strong> is observed:
+<ul>
+<li>Reduced diversity</li>
+<li>Overuse of high-probability notes</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="pipeline-robustness-test">Pipeline Robustness Test</h2>
+<p>An external MIDI file (not from the Nottingham dataset) was processed using the same pipeline.</p>
+<p>Result:</p>
+<ul>
+<li>Pitch and duration distributions align well with learned representations</li>
+<li>Confirms <strong>pipeline compatibility</strong>, not generalization performance</li>
+</ul>
+<hr>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>Weak long-term musical structure</li>
+<li>Strong class imbalance in duration modeling</li>
+<li>Reduced output diversity</li>
+<li>Performance plateaus with single-layer LSTM</li>
+</ul>
+<hr>
+<h2 id="future-work">Future Work</h2>
+<ul>
+<li>Deeper LSTM architectures or Transformer-based models</li>
+<li>Class-weighted loss functions</li>
+<li>More expressive event representations</li>
+<li>Advanced sampling strategies (top-k, nucleus sampling)</li>
+<li>Human listening tests and musicality metrics</li>
+</ul>
+<hr>
+<h2 id="reproducibility">Reproducibility</h2>
+<p>The entire pipeline can be executed sequentially:</p>
+<p>prepare_nottingham_sequences
+createDataset
+trainLSTMModel
+generateMelody
+evaluateModel</p>
+
+</body>
+</html>

@@ -49,7 +49,7 @@ Models that predict only pitch fail to learn rhythmic structure.
 - Pitch and quantized duration are combined into a **single unified token**
 - Each musical event is represented as:
 
--token = pitch_index + (duration_class - 1) × total_pitch_count
+token = pitch_index + (duration_class - 1) × total_pitch_count
 
 
 This turns music generation into a **single multi-class classification problem**, rather than predicting multiple features separately.
@@ -203,8 +203,8 @@ Result:
 
 The entire pipeline can be executed sequentially:
 
--prepare_nottingham_sequences
--createDataset
--trainLSTMModel
--generateMelody
--evaluateModel
+prepare_nottingham_sequences
+createDataset
+trainLSTMModel
+generateMelody
+evaluateModel
