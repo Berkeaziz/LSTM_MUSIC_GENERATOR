@@ -1,0 +1,9 @@
+=== SPLIT COUNTS (SONG-LEVEL) ===
+Saved at: 30-Dec-2025 20:25:14
+
+Songs: train=827, val=103, test=104, total=1034
+windowLen=25
+Windows (limited by maxWindowsPerSet=60000, 0=no limit):
+  XTrain=60000
+  XVal=31792
+  XTest=33773

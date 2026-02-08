@@ -1,0 +1,11 @@
+=== MODEL LAYERS EVIDENCE ===
+Saved at: 30-Dec-2025 20:25:08
+
+NumLayers: 6
+
+[01] input (nnet.cnn.layer.SequenceInputLayer)
+[02] embed (nnet.cnn.layer.WordEmbeddingLayer)
+[03] lstm (nnet.cnn.layer.LSTMLayer)
+[04] fc (nnet.cnn.layer.FullyConnectedLayer)
+[05] softmax (nnet.cnn.layer.SoftmaxLayer)
+[06] output (nnet.cnn.layer.ClassificationOutputLayer)

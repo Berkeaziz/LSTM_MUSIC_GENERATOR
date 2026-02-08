@@ -1,0 +1,7 @@
+=== TEST METRICS (SONG-LEVEL 80/10/10) ===
+Saved at: 30-Dec-2025 20:31:41
+
+Num test windows: 33773
+Accuracy (top-1): 0.4441
+Avg NLL (cross-entropy): 2.240656
+Perplexity: 9.3995
