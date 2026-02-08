@@ -1,9 +1,0 @@
-=== EXTERNAL MIDI TEST ===
-File: external\matlab-midi\tests\midi\jesu.mid
-Saved at: 30-Dec-2025 21:14:58
-
-windowLen: 25
-Num windows: 65
-Accuracy (top-1): 0.1692
-Avg NLL: 7.719397
-Perplexity: 2251.6016
